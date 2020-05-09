@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<img src="{% static 'images/crm/crm-5.jpg' %}" width="100%">
+
+<div class="container ">
+    <div class="card-header m-4">
+        <h4 class="card-title">Lead management</h4>
+    </div>
+    <div class=" card-body">
+            <p>There’s an entire process before a lead becomes a customer.
+            You need to identify a lead, then qualify it and only then convert the lead into a sale.
+            A lead can come from many channels – a website, cold calling, social selling, an event/seminar,
+            or it can be purchased (providing the purchase list is inline with GDPR).
+            With this number of channels, it must be clear which person or department is ultimately responsible for logging the lead in,
+            because this determines how the lead should be routed and how it will be followed up on.
+            Without a clearly defined process (work flow), leads can end up lost or forgotten, which results in frustration,
+            lost sales productivity and even a bad customer experience.
+            </p>
+
+    <img src="{% static 'images/crm/crm-1.png' %}" >
+    </div>
+
+        <div class="card-header m-4">
+        <h4 class="card-title">Customer support</h4>
+    </div>
+    <div class=" card-body">
+            <p>There should be clear rules for how customer service requests are managed.
+                These rules define whether a request goes to the first or second line of support,
+                what resources will be used to solve a customer’s problem and how status updates will be shared to ensure that the issue is being addressed.
+                Once the work flow and rules are defined, the CRM system can automate the whole flow.
+                At the same time, it keeps a record of all contacts’ history,
+                so that customer service teams can view the information to get a better understanding of how to help the customer,
+                which can then be used to improve customer satisfaction.
+            </p>
+
+    <img src="{% static 'images/crm/crm-2.png' %}" >
+    </div>
+</div>
+
+{% endblock %}

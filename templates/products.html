@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>products</h1>
+
+<div class="row m-3">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead class="black white-text">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            {% for product in products%}
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.description}} <i class="fas fa-rupee-sign"></i></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

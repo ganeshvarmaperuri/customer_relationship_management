@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <form method="POST" class="border border-light p-5" novalidate>
+        {% csrf_token %}
+        {{ordercreate|crispy}}
+        <button class="btn btn-primary btn-block">Place Order</button>
+    </form>
+
+</div>
+
+
+{% endblock %}
