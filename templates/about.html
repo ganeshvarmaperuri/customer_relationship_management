@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="background:linear-gradient(to bottom, #bdc3c7 0%, #2c3e50 100%)">
+
+    <h3 class="mb-3 font-weight-bold ml-5 ">About Project</h3><br>
+
+    <!-- Card group-1 -->
+    <div class="card-group">
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{% static 'images/home-admin.png' %}" alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div><hr>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">Admin Home Page</h4>
+          <!-- Text -->
+          <p class="card-text">Amin can access the main Dashboard.</p>
+
+        </div>
+        <!-- Card content -->
+
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{% static 'images/home-user.png' %}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div><hr>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">Customer Home Page</h4>
+          <!-- Text -->
+          <p class="card-text">If Customer Login, then we can see the Home, About, Products. Dashboard link didn't
+          show in Navbar in Customer home page.</p>
+
+        </div>
+        <!-- Card content -->
+
+      </div>
+      <!-- Card -->
+
+
+    </div>
+    <!-- Card group-1 close -->
+
+    <!-- Card group-2 -->
+    <div class="card-group">
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{% static 'images/admin-product.png' %}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div><hr>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">Admin Products Page</h4>
+          <!-- Text -->
+          <p class="card-text">Admin can add the New Products to the Products list.</p>
+
+        </div>
+        <!-- Card content -->
+
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{% static 'images/img-5.png' %}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div><hr>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">Customer Products Page</h4>
+          <!-- Text -->
+          <p class="card-text">Customer can see the list of Products and can place an Order.</p>
+
+        </div>
+        <!-- Card content -->
+
+      </div>
+      <!-- Card -->
+
+
+    </div>
+    <!-- Card group-2 close -->
+
+    <!-- Card group-3 -->
+    <div class="card-group">
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{% static 'images/dashboard.png' %}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div><hr>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">Dashboard</h4>
+          <!-- Text -->
+          <p class="card-text">Here we can track the everything i.e Total Orders and Orders Pending and Orders Deliverd.
+              we can see the List of Customers and Recent Orders and the Orders can be Update or Delete</p>
+
+        </div>
+        <!-- Card content -->
+
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{% static 'images/order-update.png' %}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div><hr>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">Update Order</h4>
+          <!-- Text -->
+          <p class="card-text">Order can be updated and can track order the by Delivery Status.</p>
+
+        </div>
+        <!-- Card content -->
+
+      </div>
+      <!-- Card -->
+
+
+    </div>
+    <!-- Card group-3 close -->
+
+    <!-- Card group-4 -->
+    <div class="card-group">
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{% static 'images/order-delete.png' %}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div><hr>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">Cancel Order</h4>
+          <!-- Text -->
+          <p class="card-text">Canceling order by deleting it, customer don't want it.</p>
+
+        </div>
+        <!-- Card content -->
+
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{% static 'images/customer-profile.png' %}"
+            alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div><hr>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">Customer Details and list of the Orders</h4>
+          <!-- Text -->
+          <p class="card-text">Displaying Customer Information with Customer Image and List of Orders Placed</p>
+
+        </div>
+        <!-- Card content -->
+
+      </div>
+      <!-- Card -->
+
+    </div>
+    <!-- Card group-4 close -->
+
+</div>
+
+
+
+
+
+
+{% endblock %}

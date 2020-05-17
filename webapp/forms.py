@@ -9,6 +9,16 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
+class UpdateUserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name','last_name','email']
+
+class UpdateUserprofile_Form(forms.ModelForm):
+    class Meta:
+        model = Customer
+        fields = ['contact', 'image']
+
 
 class Customerform(forms.ModelForm):
     class Meta:
@@ -20,9 +30,8 @@ class OrderCreateForm(forms.ModelForm):
         model = Orders
         fields = '__all__'
 
-class mail_sending(forms.Form):
-    name = forms.CharField(max_length=80)
-    email = forms.EmailField(max_length=80)
-    subject = forms.CharField(max_length=80)
-    message = forms.CharField(required=False)
+class AddProduct(forms.ModelForm):
+    class Meta:
+        model = Products
+        fields = ['name', 'price', 'description']
 

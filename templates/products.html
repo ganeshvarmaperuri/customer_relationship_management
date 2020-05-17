@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-<h1>products</h1>
 
 <div class="row m-3">
     <div class="card-body">
+        {% if user.is_staff %}
+
+        <div class="card card-body p-5" style="margin-right:400px">
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                {{add_product|crispy}}
+                <button class="btn btn-primary btn-block" type="submit">Add Product</button>
+            </form>
+        </div>
+
+        {% else %}
+            <a class="btn btn-block btn-primary" href="#">Place Order</a>
+        {% endif%}
+
+        <h1 class="card-title">Products</h1>
         <table class="table table-striped">
             <thead class="black white-text">
                 <tr>
@@ -16,8 +31,8 @@
             {% for product in products%}
                 <tr>
                     <td>{{product.name}}</td>
-                    <td>{{product.price}}</td>
-                    <td>{{product.description}} <i class="fas fa-rupee-sign"></i></td>
+                    <td>{{product.price}} <i class="fas fa-rupee-sign"></i></td>
+                    <td>{{product.description}}</td>
                 </tr>
             {% endfor %}
         </table>

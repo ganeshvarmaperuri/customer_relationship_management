@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <!-- Section: Edit Account-->
+    <section class="section">
+        <!-- First Row-->
+        <div class="row">
+            <div class="col-lg-4 mb-4 ml-5">
+                <!-- Card -->
+                <div class="card testimonial-card">
+
+                  <!-- Avatar -->
+                  <div class="avatar mx-auto">
+                    <img src="{{user.customer.image.url}}" class="rounded-circle" alt="woman avatar">
+                  </div>
+
+                  <!-- Content -->
+                  <div class="card card-header text-center" style="color:white; background: linear-gradient(to bottom, #33ccff 0%, #336699 100%);">
+                    <!-- Name -->
+                      <h3 class="mb-3 font-weight-bold" >
+                          <strong>{{user.username}}</strong>
+                      </h3>
+                  </div>
+
+                </div>
+                <!-- Card -->
+            </div>
+            <div class="col-lg-7 mb-4 ml-2">
+                <form method="POST" class="border border-light p-5" novalidate enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{u_form|crispy}}
+                    {{p_form|crispy}}
+                    <button class="btn btn-primary btn-block waves-effect waves-light">Update</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+{% endblock %}
+
+            <!-- First Column-->
+            <div class="col-lg-4 mb-4">
+            <!-- Card -->
+                <div class="card card-cascade narrower">
+                <!-- Card image-->
+                    <div class="view view-cascade gradient-card-header mdb-color lighten-3">
+                        <h5 class="mb-0 font-weight-bold">Edit Photo</h5>
+                    </div>
+                    <div class="card-body card-body-cascade text-center">
+                        <img src="" alt="User Photo" class="z-depth-1 mb-3 mx-auto">
+                        <p class="text-muted"><small>Profile Photo</small></p>
+                        <div class="row flex-center">
+                            <button class="btn btn-info btn-rounded btn-sm waves-effect waves-light">Upload Photo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -7,6 +7,8 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('about', views.about, name='about-page'),
+    path('profile', views.UserProfile, name='profile-page'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('products', views.products, name='products'),
     path('customer/<str:pk>', views.customers, name='customer'),
@@ -15,7 +17,7 @@ urlpatterns = [
     path('deleteorder/<str:pk>', views.DeleteOrder, name='deleteorder'),
     path('registration', views.UserRegistration, name='registration'),
     path('login', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='accounts/logout.html'), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='home.html'), name='logout'),
 ]
 
 if settings.DEBUG:

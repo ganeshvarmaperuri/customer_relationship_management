@@ -6,7 +6,7 @@
 .form-text{display:none}
 
 </style>
-<div class="container mt-5">
+<div class="container mt-5" style="max-width:600px">
     <form method="POST" class="border border-light p-5" novalidate>
         {% csrf_token %}
         {{form|crispy}}

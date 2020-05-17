@@ -3,14 +3,15 @@ from django.http import HttpResponse
 from .forms import *
 from .models import *
 from django.contrib.auth.decorators import login_required
-from django.conf import settings
-from django.core.mail import send_mail, EmailMessage
 from  .decorators import *
 
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 @login_required(login_url='login')
 def dashboard(request):
@@ -22,6 +23,7 @@ def dashboard(request):
     context = {'customers':customers, 'orders':orders, 'total_orders':total_orders, 'delivered':delivered, 'pending':pending}
     return render(request, 'dashboard.html', context)
 
+@login_required(login_url='login')
 def customers(request, pk):
     customer = Customer.objects.get(id=pk)
     orders = customer.orders_set.all()
@@ -31,8 +33,15 @@ def customers(request, pk):
 
 @login_required(login_url='login')
 def products(request):
+    add_product = AddProduct()
+    if request.method == 'POST':
+        add_product = AddProduct(request.POST)
+        if add_product.is_valid():
+            add_product.save()
+            return redirect('products')
+
     products = Products.objects.all()
-    context = {'products':products}
+    context = {'products':products, 'add_product':add_product}
     return render(request, 'products.html', context)
 
 def UserRegistration(request):
@@ -44,6 +53,21 @@ def UserRegistration(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'accounts/registration.html', {'form':form})
+
+def UserProfile(request):
+    if request.method == 'POST':
+        u_form = UpdateUserForm(request.POST, instance=request.user)
+        p_form = UpdateUserprofile_Form(request.POST, request.FILES, instance=request.user.customer)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            return redirect('profile-page')
+    else:
+        u_form = UpdateUserForm(instance=request.user)
+        p_form = UpdateUserprofile_Form(instance=request.user.customer)
+
+    context = {'u_form':u_form, 'p_form':p_form}
+    return render(request, 'accounts/profile.html', context)
 
 @login_required(login_url='login')
 def CreateOrder(request,pk):
